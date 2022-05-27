@@ -21,12 +21,10 @@ download \
 kapp deploy \
   --app kapp-controller \
   --file /tmp/kapp-controller.yml \
-  --diff-changes \
   --yes
 
 ## nebhale-system
 ytt --file init.yml --data-values-env DVAL | kapp deploy \
   --app nebhale-system \
   --file - \
-  --diff-changes \
   --yes
