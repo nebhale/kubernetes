@@ -1,0 +1,46 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nebhale-system
+
+---
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: cluster-content
+  namespace: nebhale-system
+spec:
+  serviceAccountName: kapp
+  fetch:
+  - git:
+      url: https://github.com/nebhale/kubernetes
+      ref: origin/main
+      subPath: config
+      secretRef:
+        name: github-credentials
+
+#@ load("@ytt:data", "data")
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github-credentials
+data:
+  username: #@ data.values.GITHUB.USERNAME
+  password: #@ data.values.GITHUB.PASSWORD
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kapp
+  namespace: nebhale-system
+
+---
+apiVersion: kapp.k14s.io/v1alpha1
+kind: Config
+diffAgainstLastAppliedFieldExclusionRules:
+- path: [secrets]
+  resourceMatchers:
+  - kindNamespaceNameMatcher: {kind: ServiceAccount, namespace: nebhale-system, name: kapp}

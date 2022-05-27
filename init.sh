@@ -5,7 +5,7 @@ set -euo pipefail
 download() {
   rm -rf "$3"
   mkdir -p "$(dirname "$3")"
-  curl -s -L "$1" | tee "$3" | sha256sum -c <(echo "$3  -") > /dev/null || rm -f "$3"
+  curl -s -L "$1" | tee "$3" | sha256sum -c <(echo "$2  -") > /dev/null || rm -f "$3"
 }
 
 unzip() {
@@ -34,6 +34,14 @@ download \
 chmod +x "${HOME}"/.local/bin/kapp
 kapp --version
 
+## ytt
+download \
+  "https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.41.1/ytt-linux-amd64" \
+  "65dbc4f3a4a2ed84296dd1b323e8e7bd77e488fa7540d12dd36cf7fb2fc77c03" \
+  "${HOME}"/.local/bin/ytt
+chmod +x "${HOME}"/.local/bin/ytt
+ytt --version
+
 ## kubeconfig
 aws eks update-kubeconfig \
   --region us-west-1 \
@@ -47,4 +55,12 @@ download \
 kapp deploy \
   --app kapp-controller \
   --file /tmp/kapp-controller.yml \
+  --diff-changes \
+  --yes
+
+## nebhale-system
+ytt --file init.yml --data-values-env DVAL | kapp deploy \
+  --app nebhale-system \
+  --file - \
+  --diff-changes \
   --yes
