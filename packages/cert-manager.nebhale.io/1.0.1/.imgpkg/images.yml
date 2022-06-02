@@ -1,0 +1,13 @@
+apiVersion: kbld.k14s.io/v1alpha1
+kind: Config
+minimumRequiredVersion: 0.33.0
+overrides:
+- image: quay.io/jetstack/cert-manager-cainjector:v1.0.1
+  newImage: quay.io/jetstack/cert-manager-cainjector@sha256:dbdf638616c30a51d8c97641bb1d8ea75481a4de4ca469d95dde915e61ee2584
+  preresolved: true
+- image: quay.io/jetstack/cert-manager-controller:v1.0.1
+  newImage: quay.io/jetstack/cert-manager-controller@sha256:53f4fc0a7481c9ce4d6a99c7471c2e07861516f8022254b3272db08e847decb6
+  preresolved: true
+- image: quay.io/jetstack/cert-manager-webhook:v1.0.1
+  newImage: quay.io/jetstack/cert-manager-webhook@sha256:36c50f83621c94185fe1bb7bfb4fec6561bc063ca365cd84717c368b5e20cbca
+  preresolved: true
