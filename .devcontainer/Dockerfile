@@ -8,7 +8,7 @@ ARG AWS_CLI_VERSION
 ARG AWS_CLI_SHA256
 RUN curl -s -L "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_VERSION}.zip" > "/tmp/awscli.zip" \
  && echo "${AWS_CLI_SHA256}  /tmp/awscli.zip" | shasum -a 256 -c \
- && unzip -d /tmp /tmp/awscli.zip \
+ && unzip -q -d /tmp /tmp/awscli.zip \
  && /tmp/aws/install \
  && aws --version
 
@@ -29,7 +29,7 @@ RUN curl -s -L "https://github.com/vmware-tanzu/carvel-kbld/releases/download/v$
 ARG IMGPKG_VERSION
 ARG IMGPKG_SHA256
 RUN curl -s -L "https://github.com/vmware-tanzu/carvel-imgpkg/releases/download/v${IMGPKG_VERSION}/imgpkg-linux-amd64" > "/usr/local/bin/imgpkg" \
- && echo "${IMGPKG_SHA256}}  /usr/local/bin/imgpkg" | shasum -a 256 -c \
+ && echo "${IMGPKG_SHA256}  /usr/local/bin/imgpkg" | shasum -a 256 -c \
  && chmod +x /usr/local/bin/imgpkg \
  && imgpkg --version
 
