@@ -24,7 +24,7 @@
 	},
 
 	"remoteEnv": {
-		"PATH": "${containerEnv:PATH}:${localWorkspaceFolder}/bin"
+		"PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/bin"
 	},
 
 	// Configure tool-specific properties.
