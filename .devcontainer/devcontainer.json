@@ -5,6 +5,17 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
+	"customizations": {
+    "codespaces": {
+      "repositories": {
+        "nebhale/dotfiles": {
+          "permissions": {
+            "contents": "read"
+          }
+        }
+      }
+    }
+  },
 	"settings": {
 		"go.toolsManagement.checkForUpdates": "local",
 		"go.useLanguageServer": true,
@@ -36,12 +47,12 @@
 		"--privileged",
 		"--init"
 	],
-	
+
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"GitHub.vscode-pull-request-github"
 	],
-	
+
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
