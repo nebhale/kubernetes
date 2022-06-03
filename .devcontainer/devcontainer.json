@@ -6,6 +6,8 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
+			"AWS_CLI_VERSION": "2.7.4",
+			"AWS_CLI_SHA256": "2b73e4be409197ffb19c169e3577ec217e0d90c0db23668255d844482aa2aa3d",
 			"EKSCTL_VERSION": "0.99.0",
 			"EKSCTL_SHA256": "be534b020bc4199b214c6adb88f3cf3666e3b6a3c8d65542ae6f3385aee01be2",
 			"KAPP_VERSION": "0.48.0",
