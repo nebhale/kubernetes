@@ -33,6 +33,13 @@ RUN curl -s -L "https://github.com/vmware-tanzu/carvel-kbld/releases/download/v$
  && chmod +x /usr/local/bin/kbld \
  && kbld --version
 
+ARG K9S_VERSION
+ARG K9S_SHA256
+RUN curl -s -L "https://github.com/derailed/k9s/releases/download/v${K9S_VERSION}/k9s_Linux_x86_64.tar.gz" > "/tmp/k9s.tar.gz" \
+ && echo "${K9S_SHA256}  /tmp/k9s.tar.gz" | shasum -a 256 -c \
+ && tar xf /tmp/k9s.tar.gz -C /usr/local/bin \
+ && k9s version
+
 ARG IMGPKG_VERSION
 ARG IMGPKG_SHA256
 RUN curl -s -L "https://github.com/vmware-tanzu/carvel-imgpkg/releases/download/v${IMGPKG_VERSION}/imgpkg-linux-amd64" > "/usr/local/bin/imgpkg" \
