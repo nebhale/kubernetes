@@ -9,6 +9,9 @@ metadata:
 iam:
   withOIDC: true
 
+secretsEncryption:
+  keyARN: arn:aws:kms:us-west-1:660407540157:key/4e86884f-2ae0-453a-a4f2-652343f5afa8
+
 kubernetesNetworkConfig:
   ipFamily: IPv4
 
