@@ -4,14 +4,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/universal:2-focal
 
 USER root
 
-ARG AWS_CLI_VERSION
-ARG AWS_CLI_SHA256
-RUN curl -s -L "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_VERSION}.zip" > "/tmp/awscli.zip" \
- && echo "${AWS_CLI_SHA256}  /tmp/awscli.zip" | shasum -a 256 -c \
- && unzip -q -d /tmp /tmp/awscli.zip \
- && /tmp/aws/install \
- && aws --version
-
 ARG EKSCTL_VERSION
 ARG EKSCTL_SHA256
 RUN curl -s -L "https://github.com/weaveworks/eksctl/releases/download/v${EKSCTL_VERSION}/eksctl_Linux_amd64.tar.gz" > "/tmp/eksctl.tar.gz" \
