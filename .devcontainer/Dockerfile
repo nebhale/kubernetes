@@ -12,6 +12,13 @@ RUN curl -s -L "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_V
  && /tmp/aws/install \
  && aws --version
 
+ARG EKSCTL_VERSION
+ARG EKSCTL_SHA256
+RUN curl -s -L "https://github.com/weaveworks/eksctl/releases/download/v${EKSCTL_VERSION}/eksctl_Linux_amd64.tar.gz" > "/tmp/eksctl.tar.gz" \
+ && echo "${EKS_SHA256}  /tmp/eksctl.tar.gz" | shasum -a 256 -c \
+ && tar xf /tmp/eksctl.tar.gz -C /usr/local/bin \
+ && eksctl version
+
 ARG KAPP_VERSION
 ARG KAPP_SHA256
 RUN curl -s -L "https://github.com/vmware-tanzu/carvel-kapp/releases/download/v${KAPP_VERSION}/kapp-linux-amd64" > "/usr/local/bin/kapp"\
