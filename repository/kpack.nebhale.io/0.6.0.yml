@@ -1,0 +1,25 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: kpack.nebhale.io.0.6.0
+  namespace: nebhale-system
+spec:
+  refName: kpack.nebhale.io
+  version: 0.6.0
+  template:
+    spec:
+      fetch:
+        git:
+          url: https://github.com/nebhale/kubernetes
+          ref: origin/main
+          subPath: packages/kpack.nebhale.io/0.6.0
+      template:
+      - ytt:
+          paths:
+          - config/
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - "-"
+      deploy:
+      - kapp: {}

@@ -63,19 +63,29 @@ vet: ## Run go vet against code.
 
 ##@ Build
 
-build: fmt vet ## Build manager binary.
+build: fmt vet bin/tanzu ## Build project binaries.
 	go build -o bin/tanzu cmd/tanzu/main.go
 
-repository:  ## Generates metadata for the repository
-	mkdir -p "repository/.imgpkg"
-	kbld -f "repository/" --imgpkg-lock-output "repository/.imgpkg/images.yml" > /dev/null
+bin/%:
+	go build -o "$@" "cmd/$*/main.go"
+
+packages: $(shell find packages -mindepth 2 -maxdepth 2 -printf '%p/.imgpkg/images.yml\n') ## Generates metadata for the packages.
+$(info $(foreach dir,$(shell find packages -mindepth 2 -maxdepth 2),$(eval $(dir)/.imgpkg/images.yml: $(shell find $(dir) -type f -not -path "$(dir)/.imgpkg/*"))))
+
+repository: repository/.imgpkg/images.yml ## Generates metadata for the repository.
+repository/.imgpkg/images.yml: $(shell find repository -type f -not -path "repository/.imgpkg/*")
+
+%/.imgpkg/images.yml:
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
+	kbld -f "$*/" --imgpkg-lock-output "$@" > /dev/null
 
 ##@ Cluster
 
-cluster: ## Provision a cluster.
+cluster: ## Provision cluster.
 	eksctl create cluster -f $(CLUSTER_CONF)
 
-cluster-essentials: kubeconfig ## Install Cluster Essentials on cluster
+cluster-init: kubeconfig ## Deploy Cluster Essentials to cluster.
 	curl -sSL "https://github.com/vmware-tanzu/carvel-kapp-controller/releases/download/v$(KAPP_CTL_VERSION)/release.yml" | tee "/tmp/kapp-controller.yml" | sha256sum -c <(echo "$(KAPP_CTL_SHA256)  -") > /dev/null || rm -f "/tmp/kapp-controller.yml"
 	curl -sSL "https://github.com/vmware-tanzu/carvel-secretgen-controller/releases/download/v$(SECRETGEN_CTL_VERSION)/release.yml" | tee "/tmp/secretgen-controller.yml" | sha256sum -c <(echo "$(SECRETGEN_CTL_SHA256)  -") > /dev/null || rm -f "/tmp/secretgen-controller.yml"
 	kapp deploy -a cluster-essentials -f /tmp/kapp-controller.yml -f /tmp/secretgen-controller.yml -y
@@ -86,61 +96,61 @@ kubeconfig: ## Write .kube/config file.
 
 ##@ Commands
 
-commands: bin/aws bin/eksctl bin/kapp bin/kbld bin/kctrl bin/k9s bin/imgpkg bin/ytt ## Download and install all external commands
+commands: bin/aws bin/eksctl bin/kapp bin/kbld bin/kctrl bin/k9s bin/imgpkg bin/ytt ## Download and install all external commands.
 
 bin/aws:
-	rm -rf "$@"
-	mkdir -p "$(@D)"
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
 	curl -sSL "https://awscli.amazonaws.com/awscli-exe-$(GOOS)-$(ARCH)-$(AWSCLI_VERSION).zip" | tee "/tmp/awscli.zip" | sha256sum -c <(echo "$(AWSCLI_SHA256)  -") > /dev/null || rm -f "/tmp/awscli.zip"
 	unzip -q -d "/tmp" "/tmp/awscli.zip"
 	"/tmp/aws/install" -i "$(abspath bin/aws-cli)" -b "$(abspath bin)"
 	"$@" -v
 
 bin/eksctl:
-	rm -rf "$@"
-	mkdir -p "$(@D)"
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
 	curl -sSL "https://github.com/weaveworks/eksctl/releases/download/v$(EKSCTL_VERSION)/eksctl_$(OS)_$(GOARCH).tar.gz" | tee "/tmp/eksctl.tar.gz" | sha256sum -c <(echo "$(EKSCTL_SHA256)  -") > /dev/null || rm -f "/tmp/eksctl.tar.gz"
 	tar xf "/tmp/eksctl.tar.gz" -C "$(@D)" eksctl
 	"$@" version
 
 bin/kapp:
-	rm -rf "$@"
-	mkdir -p "$(@D)"
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
 	curl -sSL "https://github.com/vmware-tanzu/carvel-kapp/releases/download/v$(KAPP_VERSION)/kapp-$(GOOS)-$(GOARCH)" | tee "$@" | sha256sum -c <(echo "$(KAPP_SHA256)  -") > /dev/null || rm -f "$@"
 	chmod +x "$@"
 	"$@" -v
 
 bin/kbld:
-	rm -rf "$@"
-	mkdir -p "$(@D)"
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
 	curl -sSL "https://github.com/vmware-tanzu/carvel-kbld/releases/download/v$(KBLD_VERSION)/kbld-$(GOOS)-$(GOARCH)" | tee "$@" | sha256sum -c <(echo "$(KBLD_SHA256)  -") > /dev/null || rm -f "$@"
 	chmod +x "$@"
 	"$@" -v
 
 bin/kctrl:
-	rm -rf "$@"
-	mkdir -p "$(@D)"
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
 	curl -sSL "https://github.com/vmware-tanzu/carvel-kapp-controller/releases/download/v$(KCTRL_VERSION)/kctrl-$(GOOS)-$(GOARCH)" | tee "$@" | sha256sum -c <(echo "$(KCTRL_SHA256)  -") > /dev/null || rm -f "$@"
 	chmod +x "$@"
 	"$@" -v
 
 bin/k9s:
-	rm -rf "$@"
-	mkdir -p "$(@D)"
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
 	curl -sSL "https://github.com/derailed/k9s/releases/download/v$(K9S_VERSION)/k9s_$(OS)_$(ARCH).tar.gz" | tee "/tmp/k9s.tar.gz" | sha256sum -c <(echo "$(K9S_SHA256)  -") > /dev/null || rm -f "/tmp/k9s.tar.gz"
 	tar xf "/tmp/k9s.tar.gz" -C "$(@D)" k9s
 	"$@" version
 
 bin/imgpkg:
-	rm -rf "$@"
-	mkdir -p "$(@D)"
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
 	curl -sSL "https://github.com/vmware-tanzu/carvel-imgpkg/releases/download/v$(IMGPKG_VERSION)/imgpkg-$(GOOS)-$(GOARCH)" | tee "$@" | sha256sum -c <(echo "$(IMGPKG_SHA256)  -") > /dev/null || rm -f "$@"
 	chmod +x "$@"
 	"$@" -v
 
 bin/ytt:
-	rm -rf "$@"
-	mkdir -p "$(@D)"
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
 	curl -sSL "https://github.com/vmware-tanzu/carvel-ytt/releases/download/v$(YTT_VERSION)/ytt-linux-$(GOARCH)" | tee "$@" | sha256sum -c <(echo "$(YTT_SHA256)  -") > /dev/null || rm -f "$@"
 	chmod +x "$@"
 	"$@" -v
