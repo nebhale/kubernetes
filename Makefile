@@ -66,6 +66,10 @@ vet: ## Run go vet against code.
 build: fmt vet ## Build manager binary.
 	go build -o bin/tanzu cmd/tanzu/main.go
 
+repository:  ## Generates metadata for the repository
+	mkdir -p "repository/.imgpkg"
+	kbld -f "repository/" --imgpkg-lock-output "repository/.imgpkg/images.yml" > /dev/null
+
 ##@ Cluster
 
 cluster: ## Provision a cluster.
@@ -140,3 +144,5 @@ bin/ytt:
 	curl -sSL "https://github.com/vmware-tanzu/carvel-ytt/releases/download/v$(YTT_VERSION)/ytt-linux-$(GOARCH)" | tee "$@" | sha256sum -c <(echo "$(YTT_SHA256)  -") > /dev/null || rm -f "$@"
 	chmod +x "$@"
 	"$@" -v
+
+.PHONY: build cluster cluster-essentials commands fmt help kubeconfig repository tidy vet
