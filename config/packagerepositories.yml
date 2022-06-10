@@ -11,5 +11,3 @@ spec:
       url: https://github.com/nebhale/kubernetes
       ref: origin/main
       subPath: repository
-      secretRef:
-        name: github-credentials
