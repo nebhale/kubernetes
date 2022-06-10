@@ -23,6 +23,7 @@ spec:
         name: github-credentials
   template:
   - ytt: {}
+  - kbld: {}
   deploy:
   - kapp: {}
 
