@@ -3,9 +3,13 @@ kind: PackageRepository
 metadata:
   name: nebhale
   namespace: nebhale-system
+  annotations:
+    kapp.k14s.io/change-group: "nebhale-repository"
 spec:
   fetch:
     git:
       url: https://github.com/nebhale/kubernetes
       ref: origin/main
       subPath: repository
+      secretRef:
+        name: github-credentials
