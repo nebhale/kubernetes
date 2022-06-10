@@ -18,6 +18,10 @@ spec:
       subPath: config
       secretRef:
         name: github-credentials
+  template:
+  - ytt: {}
+  deploy:
+  - kapp: {}
 
 #@ load("@ytt:data", "data")
 ---
@@ -36,6 +40,21 @@ kind: ServiceAccount
 metadata:
   name: kapp
   namespace: nebhale-system
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: kapp-cluster-role
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: kapp
+  namespace: nebhale-system
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
 
 ---
 apiVersion: kapp.k14s.io/v1alpha1
