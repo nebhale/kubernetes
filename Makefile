@@ -69,8 +69,8 @@ build: fmt vet bin/tanzu ## Build project binaries.
 bin/%:
 	go build -o "$@" "cmd/$*/main.go"
 
-packages: $(shell find packages -mindepth 2 -maxdepth 2 -printf '%p/.imgpkg/images.yml\n') ## Generates metadata for the packages.
-$(info $(foreach dir,$(shell find packages -mindepth 2 -maxdepth 2),$(eval $(dir)/.imgpkg/images.yml: $(shell find $(dir) -type f -not -path "$(dir)/.imgpkg/*"))))
+packages: $(shell find packages -mindepth 2 -maxdepth 2 -printf '%p/.imgpkg/images.yml\n repository/%p.yml\n') ## Generates metadata for the packages.
+$(foreach dir,$(shell find packages -mindepth 2 -maxdepth 2),$(eval $(dir)/.imgpkg/images.yml: $(shell find $(dir) -type f -not -path "$(dir)/.imgpkg/*")))
 
 repository: repository/.imgpkg/images.yml ## Generates metadata for the repository.
 repository/.imgpkg/images.yml: $(shell find repository -type f -not -path "repository/.imgpkg/*")
