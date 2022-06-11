@@ -5,3 +5,7 @@ metadata:
   namespace: nebhale-system
 spec:
   displayName: "kpack"
+  shortDescription: "On-cluster CNB Builds"
+  categories:
+  - "build"
+  - "buildpack"
