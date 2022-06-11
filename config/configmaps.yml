@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test
+  namespace: nebhale-system
+data:
+  foo: "bar"
