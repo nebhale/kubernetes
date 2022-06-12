@@ -7,4 +7,5 @@ spec:
   serviceAccountName: kapp
   packageRef:
     refName: kpack.nebhale.io
-    version: 0.6.0
+    versionSelection:
+      constraints: 0.6.0
