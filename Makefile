@@ -63,8 +63,7 @@ vet: ## Run go vet against code.
 
 ##@ Build
 
-build: fmt vet bin/tanzu ## Build project binaries.
-	go build -o bin/tanzu cmd/tanzu/main.go
+build: fmt vet $(shell find cmd -mindepth 1 -maxdepth 1 -printf 'bin/%P\n') ## Build project binaries.
 
 bin/%:
 	go build -o "$@" "cmd/$*/main.go"
