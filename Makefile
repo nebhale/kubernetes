@@ -93,7 +93,7 @@ config/clusterstore.yml:
 	echo "apiVersion: kpack.io/v1alpha2" >> "$@"
 	echo "kind: ClusterStore" >> "$@"
 	echo "metadata:" >> "$@"
-	echo "  name: sample-cluster-store" >> "$@"
+	echo "  name: default" >> "$@"
 	echo "spec:" >> "$@"
 	echo "  serviceAccountRef:" >> "$@"
 	echo "    name: ecr-credentials" >> "$@"
