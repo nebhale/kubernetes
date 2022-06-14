@@ -63,12 +63,12 @@ vet: ## Run go vet against code.
 
 ##@ Build
 
-build: fmt vet $(shell find cmd -mindepth 1 -maxdepth 1 -printf 'bin/%P\n') ## Build project binaries.
+build: fmt vet $(shell find cmd -mindepth 1 -maxdepth 1 -printf 'bin/%P') ## Build project binaries.
 
 bin/%:
 	go build -o "$@" "cmd/$*/main.go"
 
-packages: $(shell find packages -mindepth 2 -maxdepth 2 -printf '%p/.imgpkg/images.yml\n repository/%p.yml\n') ## Generates metadata for the packages.
+packages: $(shell find packages -mindepth 2 -maxdepth 2 -printf '%p/.imgpkg/images.yml\nrepository/%p.yml\n') ## Generates metadata for the packages.
 $(foreach dir,$(shell find packages -mindepth 2 -maxdepth 2),$(eval $(dir)/.imgpkg/images.yml: $(shell find $(dir) -type f -not -path "$(dir)/.imgpkg/*")))
 
 repository: repository/.imgpkg/images.yml ## Generates metadata for the repository.
@@ -78,6 +78,36 @@ repository/.imgpkg/images.yml: $(shell find repository -type f -not -path "repos
 	@rm -rf "$@"
 	@mkdir -p "$(@D)"
 	kbld -f "$*/" --imgpkg-lock-output "$@" > /dev/null
+
+store: ## Replicates images and creates a ClusterStore.
+store: $(shell crane ls gcr.io/paketo-buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "java\:%s.buildpack-image\n")
+store: $(shell crane ls paketobuildpacks/build | grep -- '-tiny-' | sort -Vr | xargs printf "build\:%s.stack-image\n")
+store: $(shell crane ls paketobuildpacks/run | grep -- '-tiny-' | sort -Vr | xargs printf "run\:%s.stack-image\n")
+store: config/clusterstore.yml
+.PHONY: config/clusterstore.yml
+
+config/clusterstore.yml:
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
+	echo "---" >> "$@"
+	echo "apiVersion: kpack.io/v1alpha2" >> "$@"
+	echo "kind: ClusterStore" >> "$@"
+	echo "metadata:" >> "$@"
+	echo "  name: sample-cluster-store" >> "$@"
+	echo "spec:" >> "$@"
+	echo "  serviceAccountRef:" >> "$@"
+	echo "    name: ecr-credentials" >> "$@"
+	echo "    namespace: nebhale-system" >> "$@"
+	echo "  sources:" >> "$@"
+	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "  - 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java:%s\n" >> "$@"
+	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build | grep -- '-tiny-' | sort -Vr | xargs printf "  - 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build:%s\n" >> "$@"
+	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run | grep -- '-tiny-' | sort -Vr | xargs printf "  - 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run:%s\n" >> "$@"
+
+%.buildpack-image:
+	imgpkg copy -i gcr.io/paketo-buildpacks/$* --to-repo 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/$(shell echo $* | cut -d ':' -f 1) --repo-based-tags --cosign-signatures --include-non-distributable-layers
+
+%.stack-image:
+	imgpkg copy -i paketobuildpacks/$* --to-repo 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/$(shell echo $* | cut -d ':' -f 1) --repo-based-tags --cosign-signatures --include-non-distributable-layers
 
 ##@ Cluster
 
