@@ -99,9 +99,9 @@ config/clusterstore.yml:
 	echo "    name: ecr-credentials" >> "$@"
 	echo "    namespace: nebhale-system" >> "$@"
 	echo "  sources:" >> "$@"
-	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "  - 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java:%s\n" >> "$@"
-	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build | grep -- '-tiny-' | sort -Vr | xargs printf "  - 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build:%s\n" >> "$@"
-	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run | grep -- '-tiny-' | sort -Vr | xargs printf "  - 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run:%s\n" >> "$@"
+	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "  - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java:%s\n" >> "$@"
+	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build | grep -- '-tiny-' | sort -Vr | xargs printf "  - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build:%s\n" >> "$@"
+	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run | grep -- '-tiny-' | sort -Vr | xargs printf "  - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run:%s\n" >> "$@"
 
 %.buildpack-image:
 	imgpkg copy -i gcr.io/paketo-buildpacks/$* --to-repo 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/$(shell echo $* | cut -d ':' -f 1) --repo-based-tags --cosign-signatures --include-non-distributable-layers
