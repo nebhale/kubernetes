@@ -96,7 +96,7 @@ config/clusterstore.yml:
 	echo "  name: default" >> "$@"
 	echo "spec:" >> "$@"
 	echo "  serviceAccountRef:" >> "$@"
-	echo "    name: ecr-credentials" >> "$@"
+	echo "    name: kpack" >> "$@"
 	echo "    namespace: nebhale-system" >> "$@"
 	echo "  sources:" >> "$@"
 	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "  - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java:%s\n" >> "$@"

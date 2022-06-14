@@ -10,16 +10,3 @@ spec:
       url: https://github.com/nebhale/kubernetes
       ref: origin/main
       subPath: repository
-
----
-apiVersion: packaging.carvel.dev/v1alpha1
-kind: PackageInstall
-metadata:
-  name: kpack
-  namespace: nebhale-system
-spec:
-  serviceAccountName: kapp
-  packageRef:
-    refName: kpack.nebhale.io
-    versionSelection:
-      constraints: 0.6.0
