@@ -7,9 +7,6 @@ metadata:
   region: us-west-1
   version: "1.22"
 
-iam:
-  withOIDC: true
-
 secretsEncryption:
   keyARN: arn:aws:kms:us-west-1:660407540157:key/4e86884f-2ae0-453a-a4f2-652343f5afa8
 
@@ -21,3 +18,12 @@ managedNodeGroups:
   desiredCapacity: 2
   minSize: 2
   maxSize: 2
+
+iam:
+  withOIDC: true
+  serviceAccounts:
+  - metadata:
+      name: kpack
+      namespace: nebhale-system
+    wellKnownPolicies:
+      imageBuilder: true
