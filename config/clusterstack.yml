@@ -3,6 +3,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.51-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -15,6 +18,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.50-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -27,6 +33,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.49-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -39,6 +48,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.48-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -51,6 +63,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.47-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -63,6 +78,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.46-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -75,6 +93,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.45-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -87,6 +108,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.44-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -99,6 +123,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.43-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -111,6 +138,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.42-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -123,6 +153,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.41-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -135,6 +168,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.40-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -147,6 +183,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.39-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -159,6 +198,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.38-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -171,6 +213,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.37-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -183,6 +228,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.36-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -195,6 +243,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.35-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -207,6 +258,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.34-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -219,6 +273,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.33-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -231,6 +288,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.32-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -243,6 +303,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.31-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -255,6 +318,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.30-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -267,6 +333,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.29-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -279,6 +348,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.28-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -291,6 +363,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.27-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -303,6 +378,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.26-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -315,6 +393,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.25-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -327,6 +408,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.24-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -339,6 +423,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.23-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -351,6 +438,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.22-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -363,6 +453,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.21-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -375,6 +468,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.20-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -387,6 +483,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.19-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -399,6 +498,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.18-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -411,6 +513,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.17-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -423,6 +528,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.16-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -435,6 +543,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.15-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -447,6 +558,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.14-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -459,6 +573,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.13-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -471,6 +588,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.12-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -483,6 +603,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.11-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -495,6 +618,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.10-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -507,6 +633,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.9-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -519,6 +648,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.8-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -531,6 +663,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.7-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -543,6 +678,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.6-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -555,6 +693,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.5-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -567,6 +708,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.4-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -579,6 +723,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.3-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -591,6 +738,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.2-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -603,6 +753,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.1-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -615,6 +768,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.3.0-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -627,6 +783,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.17-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -639,6 +798,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.16-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -651,6 +813,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.15-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -663,6 +828,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.14-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -675,6 +843,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.13-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -687,6 +858,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.12-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -699,6 +873,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.11-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -711,6 +888,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.10-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -723,6 +903,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.9-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -735,6 +918,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.8-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -747,6 +933,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.7-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -759,6 +948,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.6-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -771,6 +963,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.5-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -783,6 +978,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.4-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -795,6 +993,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.3-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -807,6 +1008,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.2-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -819,6 +1023,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.1-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -831,6 +1038,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.2.0-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -843,6 +1053,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.1.3-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -855,6 +1068,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.1.2-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -867,6 +1083,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.1.1-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -879,6 +1098,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.1.0-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -891,6 +1113,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.29-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -903,6 +1128,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.28-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -915,6 +1143,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.27-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -927,6 +1158,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.26-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -939,6 +1173,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.25-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -951,6 +1188,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.24-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -963,6 +1203,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.23-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -975,6 +1218,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.22-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -987,6 +1233,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.21-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -999,6 +1248,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.20-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1011,6 +1263,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.19-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1023,6 +1278,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.18-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1035,6 +1293,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.17-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1047,6 +1308,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.16-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1059,6 +1323,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.15-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1071,6 +1338,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.14-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1083,6 +1353,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.13-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1095,6 +1368,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.12-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1107,6 +1383,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.11-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1119,6 +1398,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.10-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1131,6 +1413,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.9-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1143,6 +1428,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.8-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1155,6 +1443,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.7-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1167,6 +1458,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.6-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1179,6 +1473,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.5-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1191,6 +1488,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.4-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1203,6 +1503,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.3-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1215,6 +1518,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.2-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1227,6 +1533,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.1-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1239,6 +1548,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.1.0.0-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1251,6 +1563,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.149-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1263,6 +1578,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.147-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1275,6 +1593,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.145-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1287,6 +1608,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.143-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1299,6 +1623,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.133-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1311,6 +1638,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.129-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1323,6 +1653,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.127-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1335,6 +1668,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.125-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1347,6 +1683,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.121-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1359,6 +1698,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.119-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1371,6 +1713,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.118-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1383,6 +1728,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.115-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1395,6 +1743,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.112-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1407,6 +1758,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.97-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1419,6 +1773,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.96-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1431,6 +1788,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.95-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1443,6 +1803,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.93-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1455,6 +1818,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.92-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1467,6 +1833,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.91-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1479,6 +1848,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.90-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1491,6 +1863,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.89-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1503,6 +1878,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.88-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1515,6 +1893,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.87-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1527,6 +1908,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.86-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1539,6 +1923,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.85-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1551,6 +1938,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.83-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1563,6 +1953,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.82-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1575,6 +1968,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.81-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1587,6 +1983,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.80-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1599,6 +1998,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.79-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1611,6 +2013,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.78-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1623,6 +2028,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.77-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1635,6 +2043,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.76-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1647,6 +2058,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.75-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1659,6 +2073,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.74-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1671,6 +2088,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.73-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1683,6 +2103,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.72-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1695,6 +2118,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.71-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1707,6 +2133,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.70-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1719,6 +2148,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.69-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1731,6 +2163,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.68-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1743,6 +2178,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.67-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1755,6 +2193,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.66-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1767,6 +2208,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.65-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1779,6 +2223,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.64-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1791,6 +2238,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.63-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1803,6 +2253,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.62-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1815,6 +2268,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.61-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1827,6 +2283,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.60-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1839,6 +2298,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.59-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1851,6 +2313,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.58-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1863,6 +2328,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.57-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1875,6 +2343,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.56-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1887,6 +2358,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.55-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1899,6 +2373,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.54-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1911,6 +2388,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.53-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1923,6 +2403,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.52-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1935,6 +2418,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.51-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1947,6 +2433,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.50-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1959,6 +2448,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.25-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1971,6 +2463,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.24-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1983,6 +2478,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.23-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -1995,6 +2493,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.22-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -2007,6 +2508,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.21-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -2019,6 +2523,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.20-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -2031,6 +2538,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.19-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -2043,6 +2553,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.17-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -2055,6 +2568,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.16-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
@@ -2067,6 +2583,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
   name: default.0.0.15-tiny-cnb
+  annotations:
+    kapp.k14s.io/change-rule.create-order: upsert after upserting nebhale.io/packages
+    kapp.k14s.io/change-rule.delete-order: delete before deleting nebhale.io/packages
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:

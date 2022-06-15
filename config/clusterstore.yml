@@ -3,6 +3,9 @@ apiVersion: kpack.io/v1alpha2
 kind: ClusterStore
 metadata:
   name: default
+  annotations:
+    kapp.k14s.io/change-rule.create-order: "upsert after upserting nebhale.io/packages"
+    kapp.k14s.io/change-rule.delete-order: "delete before deleting nebhale.io/packages"
 spec:
   serviceAccountRef:
     name: kpack
