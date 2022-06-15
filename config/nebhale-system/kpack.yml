@@ -5,7 +5,7 @@ metadata:
   name: kpack
   namespace: nebhale-system
   annotations:
-    kapp.k14s.io/change-group: "nebhale.io/packages"
+    kapp.k14s.io/change-group: nebhale.io/packages
 spec:
   serviceAccountName: kapp
   packageRef:
