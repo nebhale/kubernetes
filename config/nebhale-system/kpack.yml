@@ -17,8 +17,8 @@ kind: ServiceAccount
 metadata:
   name: kpack
   namespace: nebhale-system
-  annotations:                                                                                                                                                        │
-    eks.amazonaws.com/role-arn: arn:aws:iam::660407540157:role/cluster-store-access                                                                                   │
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::660407540157:role/cluster-store-access
 
 ---
 apiVersion: kapp.k14s.io/v1alpha1
