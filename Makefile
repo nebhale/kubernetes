@@ -120,17 +120,6 @@ cluster-init: kubeconfig ## Deploy Cluster Essentials to cluster.
 	kapp deploy -a cluster-essentials -f /tmp/kapp-controller.yml -f /tmp/secretgen-controller.yml -y
 	ytt -f system.yml --data-values-env DVAL | kapp deploy -a nebhale-system -f - -y
 
-ecr-secret: kubeconfig ## Create ECR credentials secret
-	kubectl create secret docker-registry ecr-credentials \
-		--namespace=nebhale-system \
-		--docker-server=660407540157.dkr.ecr.us-west-1.amazonaws.com \
-		--docker-username=AWS \
-		--docker-password="$(shell aws ecr get-login-password --region us-west-1)" \
-		--save-config \
-		--dry-run=client \
-		-o yaml | \
-			kubectl apply -f -
-
 kubeconfig: ## Write .kube/config file.
 	eksctl utils write-kubeconfig -f $(CLUSTER_CONF)
 

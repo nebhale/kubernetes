@@ -11,19 +11,19 @@ spec:
     versionSelection:
       constraints: 0.6.0
 
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: kpack
-  namespace: nebhale-system
-  annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::660407540157:role/ClusterStoreAccess
+# ---
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   name: kpack
+#   namespace: nebhale-system
+#   annotations:
+#     eks.amazonaws.com/role-arn: arn:aws:iam::660407540157:role/ClusterStoreAccess
 
----
-apiVersion: kapp.k14s.io/v1alpha1
-kind: Config
-diffAgainstLastAppliedFieldExclusionRules:
-- path: [secrets]
-  resourceMatchers:
-  - kindNamespaceNameMatcher: {kind: ServiceAccount, namespace: nebhale-system, name: kpack}
+# ---
+# apiVersion: kapp.k14s.io/v1alpha1
+# kind: Config
+# diffAgainstLastAppliedFieldExclusionRules:
+# - path: [secrets]
+#   resourceMatchers:
+#   - kindNamespaceNameMatcher: {kind: ServiceAccount, namespace: nebhale-system, name: kpack}
