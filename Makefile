@@ -80,22 +80,22 @@ repository/.imgpkg/images.yml: $(shell find repository -type f -not -path "repos
 	kbld -f "$*/" --imgpkg-lock-output "$@" > /dev/null
 
 stack: ## Creates ClusterStacks.
-stack: config/clusterstack.yml
-.PHONY: config/clusterstack.yml
+stack: config/resources/clusterstack.yml
+.PHONY: config/resources/clusterstack.yml
 
-config/clusterstack.yml:
+config/resources/clusterstack.yml: dockerconfig
 	@rm -rf "$@"
 	@mkdir -p "$(@D)"
-	for I in $$(crane ls paketobuildpacks/build | grep -- '-tiny-' | sort -Vr); do echo "---" >> "$@"; ytt -f clusterstack-template.yml -v version="$$I" >> "$@" ; echo "" >> "$@" ; done
+	for I in $$(crane ls paketobuildpacks/build | sort -Vr); do echo "---" >> "$@"; ytt -f clusterstack-template.yml -v version="$$I" >> "$@" ; echo "" >> "$@" ; done
 
-store: ## Replicates images and creates a ClusterStore.
+store: dockerconfig ## Replicates images and creates a ClusterStore.
 store: $(shell crane ls gcr.io/paketo-buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "java\:%s.buildpack-image\n")
 store: $(shell crane ls paketobuildpacks/build | grep -- '-tiny-' | sort -Vr | xargs printf "build\:%s.stack-image\n")
 store: $(shell crane ls paketobuildpacks/run | grep -- '-tiny-' | sort -Vr | xargs printf "run\:%s.stack-image\n")
-store: config/clusterstore.yml
-.PHONY: config/clusterstore.yml
+store: config/resources/clusterstore.yml
+.PHONY: config/resources/clusterstore.yml
 
-config/clusterstore.yml:
+config/resources/clusterstore.yml: dockerconfig
 	@rm -rf "$@"
 	@mkdir -p "$(@D)"
 	echo "---" >> "$@"
@@ -103,23 +103,23 @@ config/clusterstore.yml:
 	echo "kind: ClusterStore" >> "$@"
 	echo "metadata:" >> "$@"
 	echo "  name: default" >> "$@"
-	echo "  annotations:" >> "$@"
-	echo "    kapp.k14s.io/change-rule.create-order: \"upsert after upserting nebhale.io/packages\"" >> "$@"
-	echo "    kapp.k14s.io/change-rule.delete-order: \"delete before deleting nebhale.io/packages\"" >> "$@"
 	echo "spec:" >> "$@"
 	echo "  serviceAccountRef:" >> "$@"
 	echo "    name: kpack" >> "$@"
 	echo "    namespace: nebhale-system" >> "$@"
 	echo "  sources:" >> "$@"
-	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "  - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java:%s\n" >> "$@"
-	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build | grep -- '-tiny-' | sort -Vr | xargs printf "  - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build:%s\n" >> "$@"
-	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run | grep -- '-tiny-' | sort -Vr | xargs printf "  - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run:%s\n" >> "$@"
+	crane ls gcr.io/paketo-buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "  - image: public.ecr.aws/w7f4x4f0/buildpacks/java:%s\n" >> "$@"
+	crane ls paketobuildpacks/build | grep -- '-tiny-' |sort -Vr | xargs printf "  - image: public.ecr.aws/w7f4x4f0/stacks/build:%s\n" >> "$@"
+	crane ls paketobuildpacks/run | grep -- '-tiny-' | sort -Vr | xargs printf "  - image: public.ecr.aws/w7f4x4f0/stacks/run:%s\n" >> "$@"
 
-%.buildpack-image:
-	imgpkg copy -i gcr.io/paketo-buildpacks/$* --to-repo 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/$(shell echo $* | cut -d ':' -f 1) --repo-based-tags --cosign-signatures --include-non-distributable-layers
+%.buildpack-image: dockerconfig
+	crane copy gcr.io/paketo-buildpacks/$* public.ecr.aws/w7f4x4f0/buildpacks/$*
 
-%.stack-image:
-	imgpkg copy -i paketobuildpacks/$* --to-repo 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/$(shell echo $* | cut -d ':' -f 1) --repo-based-tags --cosign-signatures --include-non-distributable-layers
+%.stack-image: dockerconfig
+	crane copy paketobuildpacks/$* public.ecr.aws/w7f4x4f0/stacks/$*
+
+dockerconfig:  ## Write .docker/config.json file.
+	aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w7f4x4f0
 
 ##@ Cluster
 

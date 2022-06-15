@@ -4,8 +4,6 @@ kind: PackageRepository
 metadata:
   name: nebhale
   namespace: nebhale-system
-  annotations:
-    kapp.k14s.io/change-group: nebhale.io/package-repositories
 spec:
   fetch:
     git:
