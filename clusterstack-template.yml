@@ -3,7 +3,7 @@
 apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
-  name: base
+  name: #@ "default.{}".format(data.values.version)
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
