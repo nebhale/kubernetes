@@ -123,7 +123,7 @@ cluster-init: kubeconfig ## Deploy Cluster Essentials to cluster.
 ecr-secret: kubeconfig ## Create ECR credentials secret
 	kubectl create secret docker-registry ecr-credentials \
 		--namespace=nebhale-system \
-		--docker-server=https://660407540157.dkr.ecr.us-west-1.amazonaws.com \
+		--docker-server=660407540157.dkr.ecr.us-west-1.amazonaws.com \
 		--docker-username=AWS \
 		--docker-password="$(shell aws ecr get-login-password --region us-west-1)" \
 		--save-config \

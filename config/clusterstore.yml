@@ -4,6 +4,9 @@ kind: ClusterStore
 metadata:
   name: default
 spec:
+  serviceAccountRef:
+    name: kpack
+    namespace: nebhale-system
   sources:
   - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java:6.26.0
   - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java:6.25.0
