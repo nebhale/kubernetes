@@ -86,7 +86,7 @@ stack: config/resources/clusterstack.yml
 config/resources/clusterstack.yml: dockerconfig
 	@rm -rf "$@"
 	@mkdir -p "$(@D)"
-	for I in $$(crane ls paketobuildpacks/build | sort -Vr); do echo "---" >> "$@"; ytt -f clusterstack-template.yml -v version="$$I" >> "$@" ; echo "" >> "$@" ; done
+	for I in $$(crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build | sort -Vr); do echo "---" >> "$@"; ytt -f clusterstack-template.yml -v version="$$I" >> "$@" ; echo "" >> "$@" ; done
 
 store: dockerconfig ## Replicates images and creates a ClusterStore.
 store: $(shell crane ls gcr.io/paketo-buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "java\:%s.buildpack-image\n")
@@ -105,18 +105,18 @@ config/resources/clusterstore.yml: dockerconfig
 	echo "  name: default" >> "$@"
 	echo "spec:" >> "$@"
 	echo "  sources:" >> "$@"
-	crane ls gcr.io/paketo-buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "  - image: public.ecr.aws/w7f4x4f0/buildpacks/java:%s\n" >> "$@"
-	crane ls paketobuildpacks/build | grep -- '-tiny-' |sort -Vr | xargs printf "  - image: public.ecr.aws/w7f4x4f0/stacks/build:%s\n" >> "$@"
-	crane ls paketobuildpacks/run | grep -- '-tiny-' | sort -Vr | xargs printf "  - image: public.ecr.aws/w7f4x4f0/stacks/run:%s\n" >> "$@"
+	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java | sort -Vr | xargs printf "  - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/java:%s\n" >> "$@"
+	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build | sort -Vr | xargs printf "  - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build:%s\n" >> "$@"
+	crane ls 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run | sort -Vr | xargs printf "  - image: 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run:%s\n" >> "$@"
 
 %.buildpack-image: dockerconfig
-	crane copy gcr.io/paketo-buildpacks/$* public.ecr.aws/w7f4x4f0/buildpacks/$*
+	crane copy gcr.io/paketo-buildpacks/$* 660407540157.dkr.ecr.us-west-1.amazonaws.com/buildpacks/$*
 
 %.stack-image: dockerconfig
-	crane copy paketobuildpacks/$* public.ecr.aws/w7f4x4f0/stacks/$*
+	crane copy paketobuildpacks/$* 660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/$*
 
 dockerconfig:  ## Write .docker/config.json file.
-	aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w7f4x4f0
+	aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 660407540157.dkr.ecr.us-west-1.amazonaws.com
 
 ##@ Cluster
 

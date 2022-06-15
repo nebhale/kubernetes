@@ -7,6 +7,6 @@ metadata:
 spec:
   id: io.buildpacks.stacks.bionic
   buildImage:
-    image: #@ "public.ecr.aws/w7f4x4f0/stacks/build:{}".format(data.values.version)
+    image: #@ "660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build:{}".format(data.values.version)
   runImage:
-    image: #@ "public.ecr.aws/w7f4x4f0/stacks/run:{}".format(data.values.version)
+    image: #@ "660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run:{}".format(data.values.version)
