@@ -79,6 +79,15 @@ repository/.imgpkg/images.yml: $(shell find repository -type f -not -path "repos
 	@mkdir -p "$(@D)"
 	kbld -f "$*/" --imgpkg-lock-output "$@" > /dev/null
 
+stack: ## Creates ClusterStacks.
+stack: config/clusterstack.yml
+.PHONY: config/clusterstack.yml
+
+config/clusterstack.yml:
+	@rm -rf "$@"
+	@mkdir -p "$(@D)"
+	for I in $$(crane ls paketobuildpacks/build | grep -- '-tiny-' | sort -Vr); do echo "---" >> "$@"; ytt -f clusterstack-template.yml -v version="$$I" >> "$@" ; echo "" >> "$@" ; done
+
 store: ## Replicates images and creates a ClusterStore.
 store: $(shell crane ls gcr.io/paketo-buildpacks/java | grep -E '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | sort -Vr | xargs printf "java\:%s.buildpack-image\n")
 store: $(shell crane ls paketobuildpacks/build | grep -- '-tiny-' | sort -Vr | xargs printf "build\:%s.stack-image\n")

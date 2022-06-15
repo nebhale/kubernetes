@@ -1,0 +1,12 @@
+#@ load("@ytt:data", "data")
+---
+apiVersion: kpack.io/v1alpha2
+kind: ClusterStack
+metadata:
+  name: base
+spec:
+  id: io.buildpacks.stacks.bionic
+  buildImage:
+    image: #@ "660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/build:{}".format(data.values.version)
+  runImage:
+    image: #@ "660407540157.dkr.ecr.us-west-1.amazonaws.com/stacks/run:{}".format(data.values.version)
