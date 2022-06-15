@@ -18,7 +18,7 @@ metadata:
   name: kpack
   namespace: nebhale-system
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::660407540157:policy/ClusterStoreAccess
+    eks.amazonaws.com/role-arn: arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser
 
 ---
 apiVersion: kapp.k14s.io/v1alpha1
