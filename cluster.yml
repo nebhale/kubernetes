@@ -21,9 +21,3 @@ managedNodeGroups:
 
 iam:
   withOIDC: true
-  serviceAccounts:
-  - metadata:
-      name: kpack
-      namespace: nebhale-system
-    wellKnownPolicies:
-      imageBuilder: true
