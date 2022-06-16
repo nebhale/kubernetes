@@ -12,9 +12,6 @@ spec:
     refName: kpack.nebhale.io
     versionSelection:
       constraints: 0.6.0
-  values:
-  - secretRef:
-      name: kpack-values
 
 ---
 apiVersion: v1
