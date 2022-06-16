@@ -4,9 +4,31 @@ kind: PackageInstall
 metadata:
   name: kpack
   namespace: nebhale-system
+  annotations:
+    ext.packaging.carvel.dev/ytt-paths-from-secret-name: kpack-overlay
 spec:
   serviceAccountName: kapp
   packageRef:
     refName: kpack.nebhale.io
     versionSelection:
       constraints: 0.6.0
+  values:
+  - secretRef:
+      name: kpack-values
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kpack-overlay
+  namespace: nebhale-system
+stringData:
+  role-arn.yml: |
+    #@ load("@ytt:overlay", "overlay")
+
+    #@overlay/match by=overlay.subset({"kind": "ServiceAccount", "metadata":{"name":"controller"}}), expects=1
+    ---
+    metadata:
+      #@overlay/match missing_ok=True
+      annotations:
+        eks.amazonaws.com/role-arn: arn:aws:iam::660407540157:role/ImageBuilder

@@ -21,3 +21,11 @@ managedNodeGroups:
 
 iam:
   withOIDC: true
+  serviceAccounts:
+  - metadata:
+      name: image-builder
+      namespace: kpack
+    wellKnownPolicies:
+      imageBuilder: true
+    roleName: ImageBuilder
+    roleOnly: true
