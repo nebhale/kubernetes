@@ -3,7 +3,7 @@ module github.com/nebhale/kubernetes
 go 1.18
 
 require (
-	github.com/spf13/cobra v1.4.0
+	github.com/spf13/cobra v1.5.0
 	k8s.io/apiextensions-apiserver v0.24.2
 	k8s.io/cli-runtime v0.24.2
 	k8s.io/client-go v0.24.2
