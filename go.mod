@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	github.com/spf13/cobra v1.10.2
 	k8s.io/apiextensions-apiserver v0.35.0
-	k8s.io/cli-runtime v0.34.3
+	k8s.io/cli-runtime v0.35.0
 	k8s.io/client-go v0.35.0
 	k8s.io/kube-aggregator v0.34.3
 )
