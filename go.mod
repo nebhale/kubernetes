@@ -7,7 +7,7 @@ require (
 	k8s.io/apiextensions-apiserver v0.35.4
 	k8s.io/cli-runtime v0.35.3
 	k8s.io/client-go v0.35.4
-	k8s.io/kube-aggregator v0.35.3
+	k8s.io/kube-aggregator v0.35.4
 )
 
 require (
